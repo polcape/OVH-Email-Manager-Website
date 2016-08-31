@@ -103,9 +103,9 @@ if ($imap_server != "" && $email_name != "" && $domain != "" && $passwordmail !=
       <td>
 		<input name="email" id="email" type="text" />@
 		<select name="domain" id="domain" onchange="this.form.submit()">
-			<? foreach ($domains as $d) { ?>
-			<option value=<? echo $d ?> <? if ($domain==$d) echo "selected" ?> ><? echo $d ?>
-			<? } ?>
+			<?php foreach ($domains as $d) { ?>
+			<option value=<?php echo $d; ?> <?php if ($domain==$d) echo "selected"; ?> ><?php echo $d; ?>
+			<?php } ?>
 		</select>
 	  </td>
     </tr>
@@ -178,6 +178,7 @@ if ($imap_server != "" && $email_name != "" && $domain != "" && $passwordmail !=
     <form name="form "action="index.php" method="post">
       <input type="hidden" name="passwordmail" value="<?php echo $passwordmail; ?>">
       <input type="hidden" name="email" value="<?php echo $email_name; ?>">
+      <input type="hidden" name="domain" value="<?php echo $domain; ?>">
       <table summary="" border="0">
         <tbody>
           <tr>
